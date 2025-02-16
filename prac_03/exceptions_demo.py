@@ -27,3 +27,16 @@ print("Finished.")
 # Answer to question 3:
 # To avoid the possibility of a ZeroDivisionError, we can check if the denominator is zero before performing the division.
 # Here's an updated version of the code to handle that:
+
+try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+
+    if denominator == 0:
+        print("Cannot divide by zero!")
+    else:
+        fraction = numerator / denominator
+        print(fraction)
+except ValueError:
+    print("Numerator and denominator must be valid numbers!")
+print("Finished.")
