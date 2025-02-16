@@ -14,3 +14,12 @@ num1 = int(file.readline().strip())
 num2 = int(file.readline().strip())
 result = num1 + num2
 print(f"A soma dos dois primeiros números é: {result}")
+
+#4
+
+total = 0
+
+with open('numbers.txt', 'r') as file:
+    for line in file:
+        total += int(line.strip())
+print(f"A soma de todos os números é: {total}")
