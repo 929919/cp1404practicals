@@ -23,3 +23,5 @@ print(random.uniform(2.5, 5.5))  # line 3
 
 # What was the smallest number you could have seen, what was the largest?
 # The smallest number could have been 2.5, and the largest could have been 5.5.
+random_number = random.randint(1, 100)
+print(random_number)
