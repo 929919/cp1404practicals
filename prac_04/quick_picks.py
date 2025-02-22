@@ -1,0 +1,12 @@
+import random
+
+# Constant for the range of numbers
+MIN_NUMBER = 1
+MAX_NUMBER = 45
+NUMBERS_PER_PICK = 6
+
+def generate_quick_pick():
+    """Generate a sorted list of 6 unique random numbers between 1 and 45."""
+    quick_pick = random.sample(range(MIN_NUMBER, MAX_NUMBER + 1), NUMBERS_PER_PICK)
+    quick_pick.sort()
+    return quick_pick
