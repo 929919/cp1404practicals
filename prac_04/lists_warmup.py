@@ -11,3 +11,7 @@ numbers = [3, 1, 4, 1, 5, 9, 2]
 # 7 in numbers -> False
 # "3" in numbers -> False ("3" is a string, numbers contains integers)
 # numbers + [6, 5, 3] -> [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+
+# Modify the list
+numbers[0] = "ten"  # Change first element to "ten"
+numbers[-1] = 1     # Change last element to 1
