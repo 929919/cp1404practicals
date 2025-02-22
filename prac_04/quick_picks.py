@@ -10,3 +10,16 @@ def generate_quick_pick():
     quick_pick = random.sample(range(MIN_NUMBER, MAX_NUMBER + 1), NUMBERS_PER_PICK)
     quick_pick.sort()
     return quick_pick
+
+
+def main():
+    """Main function to execute the lottery quick pick generator."""
+    num_picks = int(input("How many quick picks? "))
+
+    for _ in range(num_picks):
+        quick_pick = generate_quick_pick()
+        print(" ".join(f"{num:2d}" for num in quick_pick))
+
+
+if __name__ == "__main__":
+    main()
