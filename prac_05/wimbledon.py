@@ -1,7 +1,7 @@
 """
 Wimbledon Champions Data Processing
 Estimate: 25 minutes
-Actual:
+Actual: 20 minutes
 """
 def read_wimbledon_data(filename):
     """Read the Wimbledon CSV file and return data as a list of lists."""
