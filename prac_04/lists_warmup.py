@@ -15,3 +15,9 @@ numbers = [3, 1, 4, 1, 5, 9, 2]
 # Modify the list
 numbers[0] = "ten"  # Change first element to "ten"
 numbers[-1] = 1     # Change last element to 1
+
+# Print all elements except the first two
+print(numbers[2:])
+
+# Check if 9 is in numbers
+print(9 in numbers)
