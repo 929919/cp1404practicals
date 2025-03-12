@@ -1,6 +1,6 @@
 """CP1404 Practical - Guitar class.
 Estimated time: 15 minutes
-Actual time: [To be recorded]
+Actual time: 20 minutes
 """
 
 
