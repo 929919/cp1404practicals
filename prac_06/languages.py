@@ -1,6 +1,6 @@
 """CP1404 Intermediate Exercises - Languages program.
 Estimated time: 10 minutes
-Actual time: [To be recorded]
+Actual time: 15 minutes
 Start time: 10:21 AM, March 11, 2025
 """
 from programming_language import ProgrammingLanguage
