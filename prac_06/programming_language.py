@@ -1,6 +1,6 @@
 """CP1404 Intermediate Exercises - Programming Language class.
 Estimated time: 30 minutes
-Actual time: [To be recorded]
+Actual time: 30 minutes
 Start time: 10:00 AM, March 11, 2025
 """
 
