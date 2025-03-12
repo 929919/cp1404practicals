@@ -1,7 +1,6 @@
 """CP1404 Practical - Guitar test program.
 Estimated time: 15 minutes
-Actual time: [To be recorded]
-Start time: 10:22 AM, March 11, 2025
+Actual time: 15 minutes
 """
 from guitar import Guitar
 
