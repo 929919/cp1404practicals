@@ -26,6 +26,10 @@ class Guitar:
         """Return string representation of a Guitar."""
         return f"{self.name} ({self.year}) - ${self.cost:,.2f}"
 
+    def is_vintage(self):
+        """Determine if a guitar is vintage (50+ years old)."""
+        return 2024 - self.year >= 50
+
     # print("My guitars!")
     # guitars = []
     #
