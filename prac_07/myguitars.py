@@ -25,5 +25,18 @@ def main():
     guitars = load_guitars()
     display_guitars(guitars)
 
+def main():
+    """Main function to load, sort, and display guitars."""
+    guitars = load_guitars()
+    print("\nOriginal list of guitars:")
+    display_guitars(guitars)
+
+    # Sort guitars by year
+    guitars.sort()
+
+    print("\nSorted guitars (oldest to newest):")
+    display_guitars(guitars)
+
+
 if __name__ == "__main__":
     main()
