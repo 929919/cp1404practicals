@@ -3,6 +3,7 @@ CP1404/CP5632 Practical - Suggested Solution
 Programming Language class with tests.
 """
 
+
 class ProgrammingLanguage:
     """Represent information about a programming language."""
 
@@ -37,6 +38,7 @@ def run_tests():
     for language in languages:
         if language.is_dynamic():
             print(language.name)
+
 
 if __name__ == "__main__":
     run_tests()
