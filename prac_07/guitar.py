@@ -18,9 +18,13 @@ class Guitar:
         return self.year < other.year
 
 
-def main():
-    print("My guitars!")
-    guitars = []
+    def main():
+         print("My guitars!")
+         guitars = []
+
+    def __str__(self):
+        """Return string representation of a Guitar."""
+        return f"{self.name} ({self.year}) - ${self.cost:,.2f}"
 
     # print("My guitars!")
     # guitars = []
