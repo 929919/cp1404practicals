@@ -20,18 +20,6 @@ def display_guitars(guitars):
         vintage_string = " (vintage)" if guitar.is_vintage() else ""
         print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
 
-def main():
-    """Main function to load, sort, and display guitars."""
-    guitars = load_guitars()
-    print("\nOriginal list of guitars:")
-    display_guitars(guitars)
-
-    # Sort guitars by year
-    guitars.sort()
-
-    print("\nSorted guitars (oldest to newest):")
-    display_guitars(guitars)
-
 def add_guitars(guitars):
     """Allow user to add new guitars."""
     print("\nAdd new guitars (leave name empty to finish):")
@@ -50,6 +38,19 @@ def save_guitars(guitars):
             file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
     print("\nGuitars saved to file.")
 
+def main():
+    """Main function to load, sort, and display guitars."""
+    guitars = load_guitars()
+    print("\nOriginal list of guitars:")
+    display_guitars(guitars)
+
+    # Sort guitars by year
+    guitars.sort()
+    print("\nSorted guitars (oldest to newest):")
+    display_guitars(guitars)
+
+    add_guitars(guitars)
+    save_guitars(guitars)
 
 if __name__ == "__main__":
     main()
