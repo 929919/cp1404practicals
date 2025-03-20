@@ -20,3 +20,13 @@ def save_projects(projects, filename='projects.txt'):
         writer.writerow(["Name", "Start Date", "Priority", "Cost Estimate", "Completion Percentage"])
         for project in projects:
             writer.writerow([project.name, project.start_date.strftime('%d/%m/%Y'), project.priority, project.cost_estimate, project.completion_percentage])
+
+def display_projects(projects):
+    print("Incomplete projects: ")
+    incomplete_projects = sorted([p for p in projects if not p.is_completed()], key=lambda p: p.priority)
+    for project in incomplete_projects:
+        print(f"  {project}")
+    print("Completed projects: ")
+    completed_projects = sorted([p for p in projects if p.is_completed()], key=lambda p: p.priority)
+    for project in completed_projects:
+        print(f"  {project}")
