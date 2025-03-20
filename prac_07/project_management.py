@@ -37,3 +37,13 @@ def filter_projects_by_date(projects, date_string):
     date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
     filtered_projects = [p for p in projects if p.start_date > date]
     return sorted(filtered_projects, key=lambda p: p.start_date)
+
+def add_project(projects):
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = input("Priority: ")
+    cost_estimate = input("Cost estimate: ")
+    completion_percentage = input("Percent complete: ")
+    new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+    projects.append(new_project)
+    print(f"Added: {new_project}")
