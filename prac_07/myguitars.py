@@ -21,11 +21,6 @@ def display_guitars(guitars):
         print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
 
 def main():
-    """Main function to load and display guitars."""
-    guitars = load_guitars()
-    display_guitars(guitars)
-
-def main():
     """Main function to load, sort, and display guitars."""
     guitars = load_guitars()
     print("\nOriginal list of guitars:")
@@ -36,6 +31,18 @@ def main():
 
     print("\nSorted guitars (oldest to newest):")
     display_guitars(guitars)
+
+def add_guitars(guitars):
+    """Allow user to add new guitars."""
+    print("\nAdd new guitars (leave name empty to finish):")
+    while True:
+        name = input("Guitar name: ")
+        if not name:
+            break
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitars.append(Guitar(name, year, cost))
+
 
 
 if __name__ == "__main__":
