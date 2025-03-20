@@ -30,3 +30,10 @@ def display_projects(projects):
     completed_projects = sorted([p for p in projects if p.is_completed()], key=lambda p: p.priority)
     for project in completed_projects:
         print(f"  {project}")
+
+import datetime
+
+def filter_projects_by_date(projects, date_string):
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    filtered_projects = [p for p in projects if p.start_date > date]
+    return sorted(filtered_projects, key=lambda p: p.start_date)
