@@ -43,6 +43,12 @@ def add_guitars(guitars):
         cost = float(input("Cost: $"))
         guitars.append(Guitar(name, year, cost))
 
+def save_guitars(guitars):
+    """Save all guitars to the CSV file."""
+    with open(FILENAME, "w") as file:
+        for guitar in guitars:
+            file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
+    print("\nGuitars saved to file.")
 
 
 if __name__ == "__main__":
