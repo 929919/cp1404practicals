@@ -1,29 +1,29 @@
 BoxLayout:
     orientation: 'vertical'
-    padding: 10
-    spacing: 10
-
-    TextInput:
-        id: input_miles
-        text: "0"
-        font_size: 32
-        multiline: False
-        input_filter: 'float'
-        on_text: app.handle_conversion(self.text)
 
     BoxLayout:
         orientation: 'horizontal'
-        spacing: 10
 
-        Button:
-            text: "Up"
-            on_press: app.handle_increment(input_miles.text, 1)
+        TextInput:
+            id: input_miles
+            text: '34'
+            font_size: 48
+            on_text: app.handle_calculate()
 
-        Button:
-            text: "Down"
-            on_press: app.handle_increment(input_miles.text, -1)
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.25
+
+            Button:
+                text: 'Up'
+                on_press: app.handle_increment(1)
+
+            Button:
+                text: 'Down'
+                on_press: app.handle_increment(-1)
 
     Label:
-        text: f"{app.output_km} km"
-        font_size: 32
-        color: (1, 1, 0, 1)  # Yellow
+        id: output_label
+        font_size: 48
+        text: app.result_text
+        color: (1, 1, 0, 1)
