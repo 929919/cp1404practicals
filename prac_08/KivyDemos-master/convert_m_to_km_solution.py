@@ -1,49 +1,46 @@
 """
-CP1404 Week 11 Workshop - GUI program to convert miles to kilometres
-Lindsay Ward, IT@JCU
-06/10/2015
+CP1404/CP5632 Practical
+Kivy GUI program to convert miles to kilometres
 """
 
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.properties import StringProperty
 
-__author__ = 'Lindsay Ward'
-
-MILES_TO_KM = 1.60934
+MILES_TO_KM = 1.60934  # Conversion constant
 
 class ConvertMilesKmApp(App):
     """App to convert miles to kilometres."""
+    output_km = StringProperty("0.0")
+
     def build(self):
         """Build the app interface from the KV file."""
         self.title = "Miles to Kilometres Converter"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
-    def handle_calculate(self):
-        """ handle calculation (could be button press or other call), output result to label widget """
-        value = self.get_validated_miles()
-        result = value * MILES_TO_KM
-        self.root.ids.output_label.text = str(result)
-
-    def handle_increment(self, change):
-        """
-        handle up/down button press, update the text input with new value, call calculation function
-        :param change: the amount to change
-        """
-        value = self.get_validated_miles() + change
-        self.root.ids.input_miles.text = str(value)
-        self.handle_calculate()
-
-    def get_validated_miles(self):
-        """
-        get text input from text entry widget, convert to float
-        :return: 0 if error, float version of text if valid
-        """
+    def handle_conversion(self, text):
+        """Convert miles to kilometres and update the output label."""
         try:
-            value = float(self.root.ids.input_miles.text)
-            return value
+            miles = float(text)
+            self.output_km = str(miles * MILES_TO_KM)
         except ValueError:
-            return 0
+            self.output_km = "0.0"
+
+    @staticmethod
+    def validate_input(text):
+        """Validate user input, assuming 0 if invalid."""
+        try:
+            return float(text)
+        except ValueError:
+            return 0.0
+
+    def handle_increment(self, text, change):
+        """Adjust the input value and recalculate the conversion."""
+        miles = self.validate_input(text) + change
+        self.root.ids.input_miles.text = str(miles)
+        self.handle_conversion(str(miles))
 
 
-MilesConverterApp().run()
+ConvertMilesKmApp().run()
+
