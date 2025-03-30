@@ -16,20 +16,20 @@ class SquareNumberApp(App):
     """ SquareNumberApp is a Kivy App for squaring a number """
     def build(self):
         """ build the Kivy app from the kv file """
-        Window.size = (300, 150)
+        Window.size = (300, 150)  # Ajustado tamanho da janela para melhor visualização
         self.title = "Square Number"
         self.root = Builder.load_file('squaring.kv')
         return self.root
 
     def handle_calculate(self, value):
-        """ handle calculation (could be button press or other call), output result to label widget """
+        """ Handle calculation, checking for errors and updating label output """
         try:
             number = float(value)
             result = number ** 2
             self.root.ids.output_label.text = str(result)
         except ValueError:
             self.root.ids.output_label.text = "Invalid input"
-            pass
 
 
 SquareNumberApp().run()
+
