@@ -1,7 +1,5 @@
 BoxLayout:
     orientation: 'vertical'
-   BoxLayout:
-    orientation: 'vertical'
     padding: 10
     spacing: 10
 
@@ -10,11 +8,22 @@ BoxLayout:
         text: "0"
         font_size: 32
         multiline: False
+        input_filter: 'float'
+        on_text: app.handle_conversion(self.text)
 
-    Button:
-        text: "Convert"
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+
+        Button:
+            text: "Up"
+            on_press: app.handle_increment(input_miles.text, 1)
+
+        Button:
+            text: "Down"
+            on_press: app.handle_increment(input_miles.text, -1)
 
     Label:
-        text: "0.0 km"
+        text: f"{app.output_km} km"
         font_size: 32
         color: (1, 1, 0, 1)  # Yellow
