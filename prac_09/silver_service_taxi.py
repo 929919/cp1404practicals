@@ -1,17 +1,18 @@
-from taxi import Taxi  # Assuming the Taxi class is in taxi.py
+from prac_09.taxi import Taxi  # Importing Taxi class from your module
 
 class SilverServiceTaxi(Taxi):
-    flagfall = 4.50  
-
+    """Specialised version of a Taxi that includes a 'fanciness' multiplier and flagfall."""
     def __init__(self, name, fuel, fanciness):
-        super().__init__(name, fuel, 1)  # Assume base price_per_km for Taxi is 1
+        """Initialise a SilverServiceTaxi instance."""
+        super().__init__(name, fuel)
         self.fanciness = fanciness
-        self.price_per_km *= self.fanciness  # Adjust the price_per_km based on fanciness
-
-    def calculate_fare(self, distance):
-        fare = super().calculate_fare(distance)  # Call Taxi's fare calculation
+        self.price_per_km *= self.fanciness
+        self.flagfall = 4.50
+    def get_fare(self):
+        """Return the fare for the SilverServiceTaxi trip, including flagfall."""
+        fare = super().get_fare()
         return fare + self.flagfall
 
     def __str__(self):
-        return f"{self.name}, fuel={self.fuel}, odo={self.odo}, {self.distance}km on current fare, ${self.price_per_km}/km plus flagfall of ${self.flagfall}"
-
+        """Return a string representation of the SilverServiceTaxi with flagfall."""
+        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
