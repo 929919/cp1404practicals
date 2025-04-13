@@ -1,4 +1,4 @@
-import wikipedia
+import wikipediaapi
 
 def main():
     title = input("Enter page title: ").strip()
